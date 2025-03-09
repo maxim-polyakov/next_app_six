@@ -1,3 +1,3 @@
-CREATE TABLE "messages" (
+CREATE TABLE "mymessages" (
 	"message" varchar NOT NULL
 );
