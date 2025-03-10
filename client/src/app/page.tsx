@@ -1,26 +1,16 @@
 'use client'
 import Image from "next/image";
 import { useState } from "react";
-import axios from "axios";
+import { fetchh } from "@/actions/fetchh";
+import { create} from "@/actions/create";
 
-const $host = axios.create({
-    baseURL: "http://localhost:5000",
-});
+//const $host = axios.create({
+  //  baseURL: "http://localhost:5000",
+//});
 
 export default function Home() {
     const [value, setValue] = useState('');
     const [svalue, setSvalue] = useState('');
-
-    const create = async (inpt) => {
-        const { data } = await $host.post("api/", inpt);
-        return data;
-    };
-
-    const fetchh = async () => {
-        const { data } = await $host.get("api/");
-
-        return data[data.length - 1].message.toString()
-    };
 
     return (
         <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
